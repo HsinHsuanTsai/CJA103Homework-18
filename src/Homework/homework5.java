@@ -45,50 +45,66 @@ public class homework5 {
 //	利用Overloading，設計兩個方法int maxElement(int x[][])與double maxElement(double x[][])，
 //	可以找出二維陣列的最大值並回傳
 	
-	     public static int maxElement(int x[][]){
-	         int max = x [0][0];
-	         for(int i = 0; i < x.length; i++){
-	             for(int j = 0; j < x[i].length; j++) {
-	                 if (x[i][j] > max) {
-	                     max = x[i][j];
-	                 }
-	             }
-	         }
-	         return max;
-	     }
-
-	     public static double maxElement(double x[][]){
-	         double max = x [0][0];
-	         for(int a = 0; a < x.length; a++){
-	             for(int b = 0; b < x[a].length; b++) {
-	                 if (x[a][b] > max) {
-	                     max = x[a][b];
-	                 }
-	             }
-	         }
-	         return max;
-	     }
-
-	     public static void main(String[] args) {
-	         int [][] intArray = {
-	                 {10, 35, 40},
-	                 {37, 75, 77}
-	         };
-
-	         double [][] doubleArray = {
-	                 {10.6, 35.8, 40.9},
-	                 {37.8, 75.5, 77.2}
-	         };
-	         System.out.println("intArray最大值：" + maxElement(intArray));
-	         System.out.println("doubleArray最大值：" + maxElement(doubleArray));
-	     }
+//	     public static int maxElement(int x[][]){
+//	         int max = x [0][0];
+//	         for(int i = 0; i < x.length; i++){
+//	             for(int j = 0; j < x[i].length; j++) {
+//	                 if (x[i][j] > max) {
+//	                     max = x[i][j];
+//	                 }
+//	             }
+//	         }
+//	         return max;
+//	     }
+//
+//	     public static double maxElement(double x[][]){
+//	         double max = x [0][0];
+//	         for(int a = 0; a < x.length; a++){
+//	             for(int b = 0; b < x[a].length; b++) {
+//	                 if (x[a][b] > max) {
+//	                     max = x[a][b];
+//	                 }
+//	             }
+//	         }
+//	         return max;
+//	     }
+//
+//	     public static void main(String[] args) {
+//	         int [][] intArray = {
+//	                 {10, 35, 40},
+//	                 {37, 75, 77}
+//	         };
+//
+//	         double [][] doubleArray = {
+//	                 {10.6, 35.8, 40.9},
+//	                 {37.8, 75.5, 77.2}
+//	         };
+//	         System.out.println("intArray最大值：" + maxElement(intArray));
+//	         System.out.println("doubleArray最大值：" + maxElement(doubleArray));
+//	     }
 	     
 //	     身為程式設計師的你，收到一個任務，要幫系統的註冊新增驗證碼的功能，請設計一個方法 
 //	     genAuthCode()，當呼叫此方法時，會回傳一個8位數的驗證碼，此驗證碼內容包含了英文大小寫
 //	     與數字的亂數組合
-	     public static String genAuthCode(){
-	         
-	     }
+	public static String genAuthCode(){
+
+        String code = "";
+	        for(int i = 0; i < 8; i++){
+	            int r = (int)(Math.random() * 3);
+	            if(r== 0){
+	            	code += (char)(Math.random() * 26 + 'A');
+	            }else if(r == 1){
+	            	code += (char)(Math.random() * 26 + 'a');
+	            }else{
+	            	code += (int)(Math.random() * 10);
+	            }
+	        }
+        return code;
+    	}
+
+    public static void main(String[] args) {
+        System.out.println("8位數的驗證碼：" + genAuthCode());
+    }
 	
 	
 }
