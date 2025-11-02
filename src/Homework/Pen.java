@@ -42,6 +42,3 @@ abstract class Pen {
 	public abstract void write();
 	
 }	
-
-
-	
